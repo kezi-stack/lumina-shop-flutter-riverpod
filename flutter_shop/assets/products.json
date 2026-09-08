@@ -1,0 +1,90 @@
+[
+  {
+    "id": "linen-shirt",
+    "name": "Chemise Lin Sable",
+    "category": "Mode",
+    "description": "Une chemise légère en lin européen, pensée pour les journées lumineuses et les soirées douces.",
+    "price": 89.0,
+    "rating": 4.8,
+    "imageUrl": "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Sable", "Blanc cassé", "Bleu nuit"],
+    "isNew": true
+  },
+  {
+    "id": "ceramic-mug",
+    "name": "Tasse Céramique Alba",
+    "category": "Maison",
+    "description": "Une tasse façonnée à la main avec une finition mate et une anse généreuse.",
+    "price": 24.0,
+    "rating": 4.9,
+    "imageUrl": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Ivoire", "Terracotta"],
+    "isNew": false
+  },
+  {
+    "id": "leather-tote",
+    "name": "Sac Cuir Atelier",
+    "category": "Accessoires",
+    "description": "Un cabas structuré en cuir pleine fleur, assez spacieux pour accompagner chaque journée.",
+    "price": 179.0,
+    "rating": 4.7,
+    "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Cognac", "Noir"],
+    "isNew": true
+  },
+  {
+    "id": "linen-candle",
+    "name": "Bougie Santal & Lin",
+    "category": "Maison",
+    "description": "Un parfum boisé et enveloppant dans un verre ambré rechargeable.",
+    "price": 32.0,
+    "rating": 4.6,
+    "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Ambre"],
+    "isNew": false
+  },
+  {
+    "id": "silk-scarf",
+    "name": "Foulard Soie Jardin",
+    "category": "Accessoires",
+    "description": "Un carré de soie imprimé en petite série, à nouer autour du cou ou d'un sac.",
+    "price": 65.0,
+    "rating": 4.8,
+    "imageUrl": "https://images.unsplash.com/photo-1601924928370-24e8c5b6d8f3?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Jardin", "Soleil"],
+    "isNew": false
+  },
+  {
+    "id": "ceramic-vase",
+    "name": "Vase Forma",
+    "category": "Maison",
+    "description": "Une silhouette sculpturale qui donne du relief aux bouquets comme aux étagères.",
+    "price": 58.0,
+    "rating": 4.5,
+    "imageUrl": "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Craie", "Argile"],
+    "isNew": true
+  },
+  {
+    "id": "cotton-knit",
+    "name": "Pull Coton Nuage",
+    "category": "Mode",
+    "description": "Un tricot de coton doux au volume décontracté, facile à superposer.",
+    "price": 112.0,
+    "rating": 4.7,
+    "imageUrl": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Nuage", "Sauge"],
+    "isNew": false
+  },
+  {
+    "id": "leather-wallet",
+    "name": "Portefeuille Compact",
+    "category": "Accessoires",
+    "description": "Un portefeuille compact et durable avec six emplacements pour cartes.",
+    "price": 49.0,
+    "rating": 4.4,
+    "imageUrl": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=85",
+    "colors": ["Noisette", "Noir"],
+    "isNew": false
+  }
+]
