@@ -4,8 +4,6 @@ Projet de certification : application e-commerce mobile Flutter utilisant Riverp
 
 ## Contenu
 
-Le projet complet se trouve dans [`flutter_shop/`](flutter_shop/).
-
 - Catalogue local avec liste, recherche, filtres, tri et détail produit
 - Panier avec ajout, suppression, quantités et total
 - Favoris persistés localement avec `SharedPreferences`
@@ -17,17 +15,15 @@ Le projet complet se trouve dans [`flutter_shop/`](flutter_shop/).
 ## Lancer l’application
 
 ```bash
-cd flutter_shop
 flutter pub get
 flutter run
 ```
 
-Voir [`flutter_shop/README.md`](flutter_shop/README.md) pour le détail de l’architecture, la liste des providers et le parcours de démonstration.
+Voir les dossiers `lib/`, `assets/` et `test/` pour le code, les données locales et les tests.
 
 ## Validation
 
 ```bash
-cd flutter_shop
 flutter analyze
 flutter test
 ```
