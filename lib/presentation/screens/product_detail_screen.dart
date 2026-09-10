@@ -134,36 +134,61 @@ class ProductDetailScreen extends ConsumerWidget {
                         .toList(),
                   ),
                   const SizedBox(height: 28),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 56,
-                    child: FilledButton.icon(
-                      onPressed: () {
-                        ref.read(cartProvider.notifier).add(product);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('${product.name} ajouté au panier'),
-                            action: SnackBarAction(
-                              label: 'Voir',
-                              onPressed: () => ref
-                                  .read(currentTabProvider.notifier)
-                                  .state = 2,
-                            ),
-                          ),
-                        );
-                      },
-                      icon: const Icon(Icons.shopping_bag_outlined),
-                      label: const Text(
-                        'Ajouter au panier',
-                        style: TextStyle(fontWeight: FontWeight.w800),
-                      ),
-                    ),
-                  ),
+                  _AddToCartButton(product: product),
                 ],
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _AddToCartButton extends ConsumerStatefulWidget {
+  const _AddToCartButton({required this.product});
+
+  final Product product;
+
+  @override
+  ConsumerState<_AddToCartButton> createState() => _AddToCartButtonState();
+}
+
+class _AddToCartButtonState extends ConsumerState<_AddToCartButton> {
+  bool _isPressed = false;
+
+  Future<void> _addToCart() async {
+    setState(() => _isPressed = true);
+    ref.read(cartProvider.notifier).add(widget.product);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${widget.product.name} ajouté au panier'),
+        action: SnackBarAction(
+          label: 'Voir',
+          onPressed: () => ref.read(currentTabProvider.notifier).state = 2,
+        ),
+      ),
+    );
+    await Future<void>.delayed(const Duration(milliseconds: 160));
+    if (mounted) setState(() => _isPressed = false);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedScale(
+      scale: _isPressed ? 0.96 : 1,
+      duration: const Duration(milliseconds: 160),
+      child: SizedBox(
+        width: double.infinity,
+        height: 56,
+        child: FilledButton.icon(
+          onPressed: _addToCart,
+          icon: const Icon(Icons.shopping_bag_outlined),
+          label: const Text(
+            'Ajouter au panier',
+            style: TextStyle(fontWeight: FontWeight.w800),
+          ),
+        ),
       ),
     );
   }

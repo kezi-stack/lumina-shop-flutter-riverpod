@@ -6,7 +6,7 @@
     "description": "Une chemise légère en lin européen, pensée pour les journées lumineuses et les soirées douces.",
     "price": 89.0,
     "rating": 4.8,
-    "imageUrl": "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/linen-shirt.svg",
     "colors": ["Sable", "Blanc cassé", "Bleu nuit"],
     "isNew": true
   },
@@ -17,7 +17,7 @@
     "description": "Une tasse façonnée à la main avec une finition mate et une anse généreuse.",
     "price": 24.0,
     "rating": 4.9,
-    "imageUrl": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/ceramic-mug.svg",
     "colors": ["Ivoire", "Terracotta"],
     "isNew": false
   },
@@ -28,7 +28,7 @@
     "description": "Un cabas structuré en cuir pleine fleur, assez spacieux pour accompagner chaque journée.",
     "price": 179.0,
     "rating": 4.7,
-    "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/leather-tote.svg",
     "colors": ["Cognac", "Noir"],
     "isNew": true
   },
@@ -39,7 +39,7 @@
     "description": "Un parfum boisé et enveloppant dans un verre ambré rechargeable.",
     "price": 32.0,
     "rating": 4.6,
-    "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/linen-candle.svg",
     "colors": ["Ambre"],
     "isNew": false
   },
@@ -50,7 +50,7 @@
     "description": "Un carré de soie imprimé en petite série, à nouer autour du cou ou d'un sac.",
     "price": 65.0,
     "rating": 4.8,
-    "imageUrl": "https://images.unsplash.com/photo-1601924928370-24e8c5b6d8f3?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/silk-scarf.svg",
     "colors": ["Jardin", "Soleil"],
     "isNew": false
   },
@@ -61,7 +61,7 @@
     "description": "Une silhouette sculpturale qui donne du relief aux bouquets comme aux étagères.",
     "price": 58.0,
     "rating": 4.5,
-    "imageUrl": "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/ceramic-vase.svg",
     "colors": ["Craie", "Argile"],
     "isNew": true
   },
@@ -72,7 +72,7 @@
     "description": "Un tricot de coton doux au volume décontracté, facile à superposer.",
     "price": 112.0,
     "rating": 4.7,
-    "imageUrl": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/cotton-knit.svg",
     "colors": ["Nuage", "Sauge"],
     "isNew": false
   },
@@ -83,7 +83,7 @@
     "description": "Un portefeuille compact et durable avec six emplacements pour cartes.",
     "price": 49.0,
     "rating": 4.4,
-    "imageUrl": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=85",
+    "imageUrl": "assets/images/leather-wallet.svg",
     "colors": ["Noisette", "Noir"],
     "isNew": false
   }

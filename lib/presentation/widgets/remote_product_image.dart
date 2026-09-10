@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class RemoteProductImage extends StatelessWidget {
   const RemoteProductImage({
@@ -16,28 +17,18 @@ class RemoteProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(borderRadius),
-      child: Image.network(
+      child: SvgPicture.asset(
         url,
         fit: fit,
-        errorBuilder: (context, error, stackTrace) {
-          return Container(
-            color: const Color(0xFFE9EFE9),
-            alignment: Alignment.center,
-            child: const Icon(Icons.image_not_supported_outlined, size: 32),
-          );
-        },
-        loadingBuilder: (context, child, progress) {
-          if (progress == null) return child;
-          return Container(
-            color: const Color(0xFFE9EFE9),
-            alignment: Alignment.center,
-            child: const SizedBox(
-              width: 22,
-              height: 22,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            ),
-          );
-        },
+        placeholderBuilder: (context) => Container(
+          color: const Color(0xFFE9EFE9),
+          alignment: Alignment.center,
+          child: const SizedBox(
+            width: 22,
+            height: 22,
+            child: CircularProgressIndicator(strokeWidth: 2),
+          ),
+        ),
       ),
     );
   }
