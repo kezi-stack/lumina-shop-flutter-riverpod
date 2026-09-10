@@ -29,7 +29,7 @@ class AppTheme {
         elevation: 0,
         centerTitle: false,
       ),
-      navigationBarTheme: NavigationBarThemeData(
+      navigationBarTheme: const NavigationBarThemeData(
         backgroundColor: cream,
         indicatorColor: mist,
         labelTextStyle: WidgetStatePropertyAll(

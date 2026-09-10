@@ -41,7 +41,8 @@ class FavoritesScreen extends ConsumerWidget {
                   child: Text(
                     'La liste de favoris n’est pas disponible pour le moment.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: AppTheme.ink.withOpacity(0.65)),
+                    style:
+                        TextStyle(color: AppTheme.ink.withValues(alpha: 0.65)),
                   ),
                 ),
               ),
@@ -58,12 +59,14 @@ class FavoritesScreen extends ConsumerWidget {
               error: (error, stackTrace) => const [
                 SliverFillRemaining(
                   hasScrollBody: false,
-                  child: Center(child: Text('Impossible de charger les produits.')),
+                  child: Center(
+                      child: Text('Impossible de charger les produits.')),
                 ),
               ],
               data: (products) {
-                final favorites =
-                    products.where((product) => favoriteIds.contains(product.id)).toList();
+                final favorites = products
+                    .where((product) => favoriteIds.contains(product.id))
+                    .toList();
                 if (favorites.isEmpty) {
                   return const [
                     SliverFillRemaining(
@@ -83,14 +86,16 @@ class FavoritesScreen extends ConsumerWidget {
                             product: product,
                             onTap: () => Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (_) => ProductDetailScreen(product: product),
+                                builder: (_) =>
+                                    ProductDetailScreen(product: product),
                               ),
                             ),
                           );
                         },
                         childCount: favorites.length,
                       ),
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 14,
                         mainAxisSpacing: 22,
@@ -126,7 +131,8 @@ class _EmptyFavorites extends StatelessWidget {
                 color: AppTheme.mist,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.favorite_border, size: 32, color: AppTheme.sage),
+              child: const Icon(Icons.favorite_border,
+                  size: 32, color: AppTheme.sage),
             ),
             const SizedBox(height: 18),
             const Text(
@@ -137,7 +143,7 @@ class _EmptyFavorites extends StatelessWidget {
             Text(
               'Touchez le cœur d’un produit pour le retrouver ici.',
               textAlign: TextAlign.center,
-              style: TextStyle(color: AppTheme.ink.withOpacity(0.62)),
+              style: TextStyle(color: AppTheme.ink.withValues(alpha: 0.62)),
             ),
           ],
         ),

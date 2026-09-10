@@ -70,12 +70,14 @@ class ProfileScreen extends ConsumerWidget {
                         const SizedBox(height: 4),
                         Text(
                           profile.email,
-                          style: TextStyle(color: Colors.white.withOpacity(0.62)),
+                          style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.62)),
                         ),
                       ],
                     ),
                   ),
-                  const Icon(Icons.edit_outlined, color: Colors.white, size: 20),
+                  const Icon(Icons.edit_outlined,
+                      color: Colors.white, size: 20),
                 ],
               ),
             ),
@@ -163,7 +165,8 @@ class _Stat extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: TextStyle(fontSize: 12, color: AppTheme.ink.withOpacity(0.58)),
+              style: TextStyle(
+                  fontSize: 12, color: AppTheme.ink.withValues(alpha: 0.58)),
             ),
           ],
         ),

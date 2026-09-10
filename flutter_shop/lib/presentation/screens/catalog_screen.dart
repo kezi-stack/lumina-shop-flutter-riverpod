@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/app_theme.dart';
-import '../../data/models/product.dart';
 import '../providers/app_providers.dart';
 import '../widgets/product_card.dart';
 import 'product_detail_screen.dart';
@@ -86,14 +85,16 @@ class CatalogScreen extends ConsumerWidget {
                               product: product,
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (_) => ProductDetailScreen(product: product),
+                                  builder: (_) =>
+                                      ProductDetailScreen(product: product),
                                 ),
                               ),
                             );
                           },
                           childCount: products.length,
                         ),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 14,
                           mainAxisSpacing: 22,
@@ -132,24 +133,28 @@ class _CatalogHeader extends StatelessWidget {
                 color: AppTheme.ink,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Icon(Icons.auto_awesome, color: Colors.white, size: 19),
+              child:
+                  const Icon(Icons.auto_awesome, color: Colors.white, size: 19),
             ),
             const SizedBox(width: 10),
             const Text(
               'LUMINA',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900, letterSpacing: 3),
+              style: TextStyle(
+                  fontSize: 15, fontWeight: FontWeight.w900, letterSpacing: 3),
             ),
           ],
         ),
         const SizedBox(height: 28),
         const Text(
           'Des objets qui\nracontent votre histoire.',
-          style: TextStyle(fontSize: 31, height: 1.08, fontWeight: FontWeight.w800),
+          style: TextStyle(
+              fontSize: 31, height: 1.08, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 10),
         Text(
           'Une sélection sensible, pensée pour le quotidien.',
-          style: TextStyle(color: AppTheme.ink.withOpacity(0.64), fontSize: 14),
+          style: TextStyle(
+              color: AppTheme.ink.withValues(alpha: 0.64), fontSize: 14),
         ),
         const SizedBox(height: 20),
         TextField(
@@ -239,8 +244,10 @@ class _SortButton extends StatelessWidget {
       onSelected: onSelected,
       itemBuilder: (context) => const [
         PopupMenuItem(value: SortOption.featured, child: Text('À la une')),
-        PopupMenuItem(value: SortOption.priceLowToHigh, child: Text('Prix croissant')),
-        PopupMenuItem(value: SortOption.priceHighToLow, child: Text('Prix décroissant')),
+        PopupMenuItem(
+            value: SortOption.priceLowToHigh, child: Text('Prix croissant')),
+        PopupMenuItem(
+            value: SortOption.priceHighToLow, child: Text('Prix décroissant')),
         PopupMenuItem(value: SortOption.rating, child: Text('Mieux notés')),
       ],
       child: Container(
@@ -254,7 +261,9 @@ class _SortButton extends StatelessWidget {
           children: [
             const Icon(Icons.tune_rounded, size: 16),
             const SizedBox(width: 6),
-            Text(_label, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
+            Text(_label,
+                style:
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
           ],
         ),
       ),
@@ -292,7 +301,8 @@ class _ErrorState extends StatelessWidget {
         children: [
           const Icon(Icons.cloud_off_rounded, size: 40, color: AppTheme.sage),
           const SizedBox(height: 12),
-          const Text('Impossible de charger la sélection.', textAlign: TextAlign.center),
+          const Text('Impossible de charger la sélection.',
+              textAlign: TextAlign.center),
           const SizedBox(height: 12),
           OutlinedButton(onPressed: onRetry, child: const Text('Réessayer')),
         ],

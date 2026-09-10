@@ -46,13 +46,14 @@ void main() {
     expect(container.read(cartCountProvider), 1);
   });
 
-  test('le filtre recherche par nom et trie par prix', () {
+  test('le filtre recherche par nom et trie par prix', () async {
     final container = ProviderContainer(
       overrides: [
         productsProvider.overrideWith((ref) async => [shirt, mug]),
       ],
     );
     addTearDown(container.dispose);
+    await container.read(productsProvider.future);
     final filter = container.read(productFilterProvider.notifier);
 
     filter.setCategory('Mode');

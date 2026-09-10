@@ -71,7 +71,8 @@ class CartScreen extends ConsumerWidget {
               padding: const EdgeInsets.fromLTRB(22, 28, 22, 36),
               child: Column(
                 children: [
-                  _SummaryRow(label: 'Sous-total', value: currency.format(subtotal)),
+                  _SummaryRow(
+                      label: 'Sous-total', value: currency.format(subtotal)),
                   const SizedBox(height: 9),
                   const _SummaryRow(label: 'Livraison', value: 'Offerte'),
                   const Divider(height: 30),
@@ -148,7 +149,8 @@ class _CartRow extends StatelessWidget {
           SizedBox(
             width: 84,
             height: 96,
-            child: RemoteProductImage(url: item.product.imageUrl, borderRadius: 14),
+            child: RemoteProductImage(
+                url: item.product.imageUrl, borderRadius: 14),
           ),
           const SizedBox(width: 13),
           Expanded(
@@ -164,7 +166,7 @@ class _CartRow extends StatelessWidget {
                 const SizedBox(height: 6),
                 Text(
                   currency.format(item.product.price),
-                  style: TextStyle(color: AppTheme.ink.withOpacity(0.62)),
+                  style: TextStyle(color: AppTheme.ink.withValues(alpha: 0.62)),
                 ),
                 const SizedBox(height: 10),
                 QuantityStepper(
@@ -224,7 +226,9 @@ class _SummaryRow extends StatelessWidget {
           style: TextStyle(
             fontSize: emphasized ? 18 : 14,
             fontWeight: FontWeight.w800,
-            color: emphasized ? AppTheme.ink : AppTheme.ink.withOpacity(0.76),
+            color: emphasized
+                ? AppTheme.ink
+                : AppTheme.ink.withValues(alpha: 0.76),
           ),
         ),
       ],
@@ -250,7 +254,8 @@ class _EmptyCart extends StatelessWidget {
                 color: AppTheme.mist,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.shopping_bag_outlined, size: 32, color: AppTheme.sage),
+              child: const Icon(Icons.shopping_bag_outlined,
+                  size: 32, color: AppTheme.sage),
             ),
             const SizedBox(height: 18),
             const Text(
@@ -261,7 +266,7 @@ class _EmptyCart extends StatelessWidget {
             Text(
               'Les pièces que vous choisissez apparaîtront ici.',
               textAlign: TextAlign.center,
-              style: TextStyle(color: AppTheme.ink.withOpacity(0.62)),
+              style: TextStyle(color: AppTheme.ink.withValues(alpha: 0.62)),
             ),
           ],
         ),

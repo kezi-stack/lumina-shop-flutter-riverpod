@@ -51,8 +51,7 @@ class FavoritesNotifier extends AsyncNotifier<Set<String>> {
   }
 }
 
-final favoritesProvider =
-    AsyncNotifierProvider<FavoritesNotifier, Set<String>>(
+final favoritesProvider = AsyncNotifierProvider<FavoritesNotifier, Set<String>>(
   FavoritesNotifier.new,
 );
 
@@ -98,7 +97,8 @@ final productFilterProvider =
 
 final categoriesProvider = Provider<List<String>>((ref) {
   final products = ref.watch(productsProvider).valueOrNull ?? <Product>[];
-  final categories = products.map((product) => product.category).toSet().toList();
+  final categories =
+      products.map((product) => product.category).toSet().toList();
   categories.sort();
   return ['Tous', ...categories];
 });
@@ -142,7 +142,8 @@ class CartNotifier extends StateNotifier<List<CartItem>> {
       return;
     }
     final updated = [...state];
-    updated[index] = updated[index].copyWith(quantity: updated[index].quantity + 1);
+    updated[index] =
+        updated[index].copyWith(quantity: updated[index].quantity + 1);
     state = updated;
   }
 
@@ -150,7 +151,8 @@ class CartNotifier extends StateNotifier<List<CartItem>> {
     final index = state.indexWhere((item) => item.product.id == productId);
     if (index == -1) return;
     final updated = [...state];
-    updated[index] = updated[index].copyWith(quantity: updated[index].quantity + 1);
+    updated[index] =
+        updated[index].copyWith(quantity: updated[index].quantity + 1);
     state = updated;
   }
 
@@ -179,7 +181,9 @@ final cartProvider = StateNotifierProvider<CartNotifier, List<CartItem>>(
 );
 
 final cartCountProvider = Provider<int>((ref) {
-  return ref.watch(cartProvider).fold(0, (total, item) => total + item.quantity);
+  return ref
+      .watch(cartProvider)
+      .fold(0, (total, item) => total + item.quantity);
 });
 
 final cartSubtotalProvider = Provider<double>((ref) {

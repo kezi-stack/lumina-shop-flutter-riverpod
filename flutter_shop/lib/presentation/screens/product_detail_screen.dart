@@ -15,7 +15,8 @@ class ProductDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isFavorite = ref.watch(
-      favoritesProvider.select((state) => state.valueOrNull?.contains(product.id) ?? false),
+      favoritesProvider
+          .select((state) => state.valueOrNull?.contains(product.id) ?? false),
     );
     final currency = NumberFormat.currency(locale: 'fr_FR', symbol: '€');
 
@@ -42,7 +43,8 @@ class ProductDetailScreen extends ConsumerWidget {
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 92, 16, 12),
-                child: RemoteProductImage(url: product.imageUrl, borderRadius: 28),
+                child:
+                    RemoteProductImage(url: product.imageUrl, borderRadius: 28),
               ),
             ),
           ),
@@ -78,14 +80,16 @@ class ProductDetailScreen extends ConsumerWidget {
                       const SizedBox(width: 14),
                       Text(
                         currency.format(product.price),
-                        style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
+                        style: const TextStyle(
+                            fontSize: 19, fontWeight: FontWeight.w800),
                       ),
                     ],
                   ),
                   const SizedBox(height: 14),
                   Row(
                     children: [
-                      const Icon(Icons.star_rounded, color: Color(0xFFE3A544), size: 20),
+                      const Icon(Icons.star_rounded,
+                          color: Color(0xFFE3A544), size: 20),
                       const SizedBox(width: 4),
                       Text(
                         '${product.rating} / 5',
@@ -94,7 +98,8 @@ class ProductDetailScreen extends ConsumerWidget {
                       const SizedBox(width: 12),
                       Text(
                         '•  Édition choisie par Lumina',
-                        style: TextStyle(color: AppTheme.ink.withOpacity(0.55)),
+                        style: TextStyle(
+                            color: AppTheme.ink.withValues(alpha: 0.55)),
                       ),
                     ],
                   ),
@@ -102,7 +107,7 @@ class ProductDetailScreen extends ConsumerWidget {
                   Text(
                     product.description,
                     style: TextStyle(
-                      color: AppTheme.ink.withOpacity(0.7),
+                      color: AppTheme.ink.withValues(alpha: 0.7),
                       fontSize: 15,
                       height: 1.5,
                     ),
@@ -140,7 +145,9 @@ class ProductDetailScreen extends ConsumerWidget {
                             content: Text('${product.name} ajouté au panier'),
                             action: SnackBarAction(
                               label: 'Voir',
-                              onPressed: () => ref.read(currentTabProvider.notifier).state = 2,
+                              onPressed: () => ref
+                                  .read(currentTabProvider.notifier)
+                                  .state = 2,
                             ),
                           ),
                         );
@@ -178,7 +185,7 @@ class _RoundIconButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 12, top: 8),
       child: Material(
-        color: Colors.white.withOpacity(0.92),
+        color: Colors.white.withValues(alpha: 0.92),
         shape: const CircleBorder(),
         child: IconButton(
           onPressed: onPressed,

@@ -22,7 +22,8 @@ class ProductCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isFavorite = ref.watch(
-      favoritesProvider.select((state) => state.valueOrNull?.contains(product.id) ?? false),
+      favoritesProvider
+          .select((state) => state.valueOrNull?.contains(product.id) ?? false),
     );
     return InkWell(
       onTap: onTap,
@@ -42,7 +43,8 @@ class ProductCard extends ConsumerWidget {
                     top: 12,
                     left: 12,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 9, vertical: 5),
                       decoration: BoxDecoration(
                         color: AppTheme.ink,
                         borderRadius: BorderRadius.circular(30),
@@ -62,7 +64,7 @@ class ProductCard extends ConsumerWidget {
                   top: 10,
                   right: 10,
                   child: Material(
-                    color: Colors.white.withOpacity(0.92),
+                    color: Colors.white.withValues(alpha: 0.92),
                     shape: const CircleBorder(),
                     child: IconButton(
                       tooltip: isFavorite
